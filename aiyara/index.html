@@ -2,7 +2,7 @@
 <title>Aiyara – Thailändsk restaurang på Gärdet, Stockholm</title>
 <meta name="description" content="Aiyara Restaurang – thailändsk mat på Rindögatan 17, Gärdet. 4,7 i betyg från 600+ gäster. Ring och beställ: 073-524 01 55.">
 <meta name="robots" content="noindex">
-<link rel="preload" as="image" href="media/poster.jpg">
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/hero/padthai-1280.webp 1280w, img/hero/padthai-1920.webp 1920w, img/hero/padthai-3648.webp 3648w" imagesizes="(max-width:820px) 100vw, 50vw">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -21,13 +21,18 @@ nav a{margin-left:26px;text-decoration:none;font-size:14px;letter-spacing:.08em;
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:.25s}
 .btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--g)}.btn.gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px #c9a24a66}
 .btn.line{border:1.5px solid #fff9;color:#fff}.btn.line:hover{background:#fff1}
-.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:#0e2a1f url(media/poster.jpg) center/cover}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,#0e2a1f66,#0e2a1fdd 80%),linear-gradient(#0008,#0003 40%,#0e2a1f)}
-.hero .c{position:relative;z-index:2;padding:110px 22px 60px;animation:up 1.2s ease both}
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:1fr 1fr;align-items:center;color:#fff;background:var(--g);overflow:hidden}
+.hero .c{position:relative;z-index:2;padding:120px 56px 70px max(22px,calc((100vw - 1140px)/2 + 22px));animation:up 1.2s ease both}
+.hero h1{font-size:clamp(46px,6vw,84px);line-height:1;margin:.2em 0 .1em;letter-spacing:.12em}
+.hero .sig{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);margin-top:10px}
+.hero .dish-name{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(58px,8vw,118px);line-height:.95;color:var(--cream);margin:.05em 0 .3em}
+.hero p.l{font-size:clamp(16px,1.6vw,19px);max-width:480px;margin:0 0 32px;opacity:.88}
+.hero .cta{justify-content:flex-start}
+.hero-img{position:absolute;inset:0 0 0 50%;overflow:hidden}.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;animation:zoom 14s ease-out both}
+.hero-img:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--g) 0%,#0e2a1fb3 12%,transparent 40%),linear-gradient(#0e2a1f80,transparent 18%)}
+@keyframes zoom{from{transform:scale(1.08)}}
+@media(max-width:820px){.hero{grid-template-columns:1fr;align-items:end}.hero-img{inset:0 0 auto 0;height:58svh}.hero-img img{object-position:62% 70%}.hero-img:before{background:linear-gradient(#0e2a1f99,transparent 25%,transparent 60%,var(--g))}.hero .c{padding:calc(52svh) 22px 110px}.hero .dish-name{font-size:64px}}
 .eyebrow{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold2)}
-.hero h1{font-size:clamp(52px,9vw,112px);line-height:1;margin:.25em 0 .2em}
-.hero p.l{font-size:clamp(17px,2vw,21px);max-width:620px;margin:0 auto 34px;opacity:.92}
 .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .badge{margin-top:42px;display:inline-flex;gap:12px;align-items:center;padding:10px 20px;border:1px solid #fff3;border-radius:999px;background:#0003;backdrop-filter:blur(6px);font-size:15px}
 .stars{color:var(--gold2);letter-spacing:2px}
@@ -59,7 +64,7 @@ footer{background:#08180f;color:#cfc6b0;padding:46px 0 110px;text-align:center;f
 @keyframes up{from{opacity:0;transform:translateY(30px)}}
 a:focus-visible,button:focus-visible{outline:3px solid var(--gold2);outline-offset:3px}
 @media(max-width:820px){nav{display:none}.split,.info,.panel{grid-template-columns:1fr}.split{gap:30px}.stack img+img{right:0}section{padding:80px 0}.callbar{display:flex}.hdrcall{display:none}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero video{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style></head><body>
 <a class="skip" href="#main">Hoppa till innehåll</a>
 <header id="hdr"><div class="wrap nav"><a class="logo" href="#top">AIY<span>A</span>RA</a>
@@ -67,12 +72,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold2);outline-offs
 <a class="btn gold hdrcall" href="tel:+46735240155">Ring 073-524 01 55</a></div></header>
 <main id="main">
 <section class="hero" id="top" style="padding:0">
-<video autoplay muted loop playsinline preload="auto" poster="media/poster.jpg" aria-hidden="true"><source src="media/hero.webm" type="video/webm"><source src="media/hero.mp4" type="video/mp4"></video>
 <div class="c"><div class="eyebrow">Thailändsk restaurang · Gärdet</div>
-<h1>Aiyara</h1><div class="orn"></div>
-<p class="l">Äkta thailändska smaker från heta wokar – lagat med kärlek på Rindögatan 17. Ät hos oss, ta med eller få det levererat.</p>
+<h1>Aiyara</h1><div class="orn" style="margin-left:0"></div>
+<p class="sig">Vår signaturrätt</p><h2 class="dish-name">Pad Thai</h2>
+<p class="l">Krämig, full av grönsaker och generöst serverad – gästernas favorit på Rindögatan 17. Ät hos oss, ta med eller få det levererat.</p>
 <div class="cta"><a class="btn gold" href="tel:+46735240155">📞 Ring &amp; beställ</a><a class="btn line" href="#meny">Se menyn</a></div>
-<div class="badge"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4,7</b> av 5 · 600+ omdömen på Google</span></div></div></section>
+<div class="badge"><span class="stars" aria-hidden="true">★★★★★</span><span><b>4,7</b> av 5 · 600+ omdömen på Google</span></div></div>
+<picture class="hero-img"><source type="image/webp" srcset="img/hero/padthai-1280.webp 1280w, img/hero/padthai-1920.webp 1920w, img/hero/padthai-3648.webp 3648w" sizes="(max-width:820px) 100vw, 50vw"><img src="img/hero/padthai-1920.jpg" srcset="img/hero/padthai-1280.jpg 1280w, img/hero/padthai-1920.jpg 1920w, img/hero/padthai-3648.jpg 3648w" sizes="(max-width:820px) 100vw, 50vw" alt="Pad Thai med räkor, jordnötter och lime på ett vitt fat" width="3648" height="5472" fetchpriority="high"></picture></section>
 
 <section id="om"><div class="wrap split"><div class="stack rv"><img src="img/b.jpg" alt="Dukat bord med thailändska rätter" loading="lazy" width="1600" height="900"><img src="img/a.jpg" alt="Pad thai med räkor" loading="lazy" width="1600" height="1067"></div>
 <div class="rv d1"><div class="eyebrow" style="color:var(--chili)">Välkommen</div><h2 style="font-size:clamp(36px,4.5vw,52px);color:var(--g);line-height:1.1;margin:.2em 0 .4em">Gärdets kvarterskök för thailändsk mat</h2>
@@ -100,7 +106,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold2);outline-offs
 
 <section class="final"><div class="wrap rv"><h2>Sugen på thai ikväll?</h2><p>Ring in din beställning – vi lagar den direkt.</p><a class="btn gold" href="tel:+46735240155">📞 073-524 01 55</a></div></section>
 </main>
-<footer><span class="logo">AIYARA</span>Rindögatan 17, Gärdet · <a href="tel:+46735240155">073-524 01 55</a> · <a href="mailto:aiyaragardet@gmail.com">aiyaragardet@gmail.com</a><small>Demo · Foton: Unsplash · Video: Pexels (Suraphat Nuea-on, Pete Miller Portraits, Fasim Raja)</small></footer>
+<footer><span class="logo">AIYARA</span>Rindögatan 17, Gärdet · <a href="tel:+46735240155">073-524 01 55</a> · <a href="mailto:aiyaragardet@gmail.com">aiyaragardet@gmail.com</a><small>Demo · Foton: Unsplash · Pad Thai-foto: UNDO KIM / Pexels</small></footer>
 <a class="callbar" href="tel:+46735240155">📞 Ring &amp; beställ</a>
 <script>
 const h=document.getElementById('hdr');const f=()=>h.classList.toggle('s',scrollY>40);addEventListener('scroll',f,{passive:true});f();
